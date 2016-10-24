@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
 public class Color {
     
@@ -25,6 +25,7 @@ public class Color {
     
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
+  
     //<editor-fold defaultstate="collapsed" desc="Gettes/Setters">
     /**
      * @return the red
@@ -130,10 +131,6 @@ public class Color {
     
     
 //</editor-fold>
-
-    
-    
-
-    
+ 
     
 }

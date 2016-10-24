@@ -18,7 +18,7 @@ public class Rectangle {
     
 //</editor-fold>
     
-    //<editor-fold defaultstate="collapsed" desc="Metodos">
+//<editor-fold defaultstate="collapsed" desc="Metodos">
 //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     
      /**
