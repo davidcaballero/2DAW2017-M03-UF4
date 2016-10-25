@@ -147,10 +147,13 @@ public class Application {
         
         Color co1= new Color(125,125,Color.MAX_VALUE);
         
-        System.out.printf("---Colores---");             
+        System.out.printf("\n---Color---");             
         System.out.printf("\nco1-> r: %d g: %d b: %d %n", co1.getRed(), co1.getGreen(),
         co1.getBlue() );
-                 
+        System.out.printf("co1-> %s %n", co1.toHexString(true));
+        System.out.printf("co1-> %s %n", co1.toHexString(false));
+        
+        System.out.printf("\n---Color Hexadecimal---");
         Color co2= Color.fromHexString("#FFAAFF");
         System.out.printf("\nco2-> r: %d g: %d b: %d %n", co2.getRed(), co2.getGreen(),
         co2.getBlue() );

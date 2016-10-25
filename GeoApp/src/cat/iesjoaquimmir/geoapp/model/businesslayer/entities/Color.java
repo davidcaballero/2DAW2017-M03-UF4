@@ -94,6 +94,11 @@ public class Color {
         this.setGreen(green);
         this.setBlue(blue);
     }
+
+    public Color() {
+        this(MIN_VALUE,MIN_VALUE,MIN_VALUE);
+    }
+    
     
     
 //</editor-fold>
@@ -127,6 +132,20 @@ public class Color {
         
     }
     
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
+      public String toRGBString(){
+          throw new UnsupportedOperationException("Not yet implemented!!");
+      }
+      
+      public String toHexString(boolean upper){
+          
+          return String.format(upper ? "#%02X%02X%02X" : "#%02x%02x%02x", getRed(), getGreen(), getBlue());
+      }
+      
+      public String toHexString(){
+          return toHexString(true);
+      }
 //</editor-fold>
     
     
