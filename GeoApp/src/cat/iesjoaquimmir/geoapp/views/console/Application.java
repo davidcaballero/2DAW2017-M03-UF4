@@ -209,9 +209,6 @@ public static void functoHexString(){
         System.out.printf("%s %n", ac2.toRGBString());
         
         
-   
-        
-       
         
       
        

@@ -13,8 +13,8 @@ public abstract class Shape {
     
 //<editor-fold defaultstate="collapsed" desc="Atributos">
     
-    private Color backgroundColor;
-    private Color foregroundColor;
+    private AlphaColor backgroundColor;
+    private AlphaColor foregroundColor;
     private static int counter=0;
     
 //</editor-fold>
@@ -24,14 +24,14 @@ public abstract class Shape {
         /**
          * @return the backgroundColor
          */
-        public Color getBackgroundColor() {
+        public AlphaColor getBackgroundColor() {
             return backgroundColor;
         }
 
         /**
          * @param backgroundColor the backgroundColor to set
          */
-        public void setBackgroundColor(Color backgroundColor) {
+        public void setBackgroundColor(AlphaColor backgroundColor) {
              if(backgroundColor==null){
                 throw new NullPointerException("Es obligatorio indicar el backgroundColor");
             }
@@ -41,14 +41,14 @@ public abstract class Shape {
         /**
          * @return the foregroundColor
          */
-        public Color getForegroundColor() {
+        public AlphaColor getForegroundColor() {
             return foregroundColor;
         }
 
         /**
          * @param foregroundColor the foregroundColor to set
          */
-        public void setForegroundColor(Color foregroundColor) {
+        public void setForegroundColor(AlphaColor foregroundColor) {
             
             if(foregroundColor==null){
                 throw new NullPointerException("Es obligatorio indicar el foregroundColor");
@@ -71,7 +71,7 @@ public abstract class Shape {
         counter++;
     }
     
-      public Shape(Color backgroundColor, Color foregroundColor) {
+      public Shape(AlphaColor backgroundColor, AlphaColor foregroundColor) {
         this.backgroundColor = backgroundColor;
         this.foregroundColor = foregroundColor;
         counter++;

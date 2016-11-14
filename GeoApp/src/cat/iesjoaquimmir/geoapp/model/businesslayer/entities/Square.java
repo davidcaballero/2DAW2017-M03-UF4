@@ -18,14 +18,14 @@ public class Square extends Shape {
 //<editor-fold defaultstate="collapsed" desc="Metodos">
     //<editor-fold defaultstate="collapsed" desc="Constructores">
          
-    public Square(double side,Color backgroundColor, Color foregroundColor) {
+    public Square(double side,AlphaColor backgroundColor, AlphaColor foregroundColor) {
         super(backgroundColor,foregroundColor);
         this.setSide(side);
     }
     
      public Square(double side){
-        this(side, new Color(Color.MAX_VALUE,Color.MAX_VALUE,Color.MAX_VALUE),
-        new Color(Color.MIN_VALUE,Color.MIN_VALUE,Color.MIN_VALUE));
+        this(side, new AlphaColor(Color.MAX_VALUE,Color.MAX_VALUE,Color.MAX_VALUE),
+        new AlphaColor(Color.MIN_VALUE,Color.MIN_VALUE,Color.MIN_VALUE));
     }
      
 //</editor-fold>
