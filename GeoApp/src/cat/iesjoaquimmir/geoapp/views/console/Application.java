@@ -5,6 +5,7 @@
  */
 package cat.iesjoaquimmir.geoapp.views.console;
 
+import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.AlphaColor;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Cercle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Rectangle;
@@ -14,21 +15,19 @@ import java.util.Scanner;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
 public class Application {
     
-      public static void main(String[] args) {
-        // TODO code application logic here
-    
-//<editor-fold defaultstate="collapsed" desc="menu">
+    public static void main(String[] args) {
+        //<editor-fold defaultstate="collapsed" desc="menu">
      
        int  opc;
         Scanner input = new Scanner(System.in); 
         
         do{
         System.out.println("\n1-Square\n2-Rectangle\n3-Cercle\n4-Sphere\n5-Color"
-                + "\n6-Color aleatorio\n7-Salir\nElije la opcion que quieras: ");
+                + "\n6-Color aleatorio\n7-toHexString\n8-AlphaColor\n9-Salir\nElije la opcion que quieras: ");
         opc=input.nextInt();                   
                    
         if (opc==1){
@@ -44,13 +43,18 @@ public class Application {
         }else if(opc==6){    
             funcColAlea();
             
-        }else if(opc==7){
+         }else if(opc==7){    
+            functoHexString();   
+            
+        }else if(opc==8){
+            funcAlpha();
+         
+        }else if(opc==9){
             System.exit(0);
         }
-        }while(opc<=0 || opc>7);
+        }while(opc<=0 || opc>9);
 
 //</editor-fold>   
- 
     }
     
 //<editor-fold defaultstate="collapsed" desc="funciones">
@@ -72,9 +76,8 @@ public class Application {
         System.out.printf("\n---Cuadrado ---\n");
         System.out.printf("\nÁrea: %s",cuadrado.getArea());         
         System.out.printf("\nPerímetro: %s\n",cuadrado.getPerimeter());
-        
-         
-           
+        System.out.printf("%s %n",cuadrado.toString());
+    
     }
         
 //</editor-fold>  
@@ -93,14 +96,15 @@ public class Application {
         
               
         Rectangle rectangulo= new Rectangle(alt,bas);
-        Rectangle rectangulo2=new Rectangle(alt);
+       // Rectangle rectangulo2=new Rectangle(alt);
         System.out.printf("---Rectangle--- %n");
         System.out.printf("\nÁrea: %s",rectangulo.getArea());         
         System.out.printf("\nPerímetro: %s",rectangulo.getPerimeter());
         
-        System.out.printf("\n---Rectangle 2--- %n");
+        /*System.out.printf("\n---Rectangle 2--- %n");
         System.out.printf("\nAltura: %s", rectangulo2.getAltura());
         System.out.printf("\nBase: %s\n", rectangulo.getBase());
+           */
     }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Cercle">
@@ -161,9 +165,6 @@ public class Application {
         
         System.out.printf("\nColores creados: %d %n", Color.getCounter());
       
-              
-       
-        
     
      }  
         
@@ -180,6 +181,44 @@ public static void funcColAlea() {
     
     
     
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="toHexString">
+public static void functoHexString(){
+    Color co1= new Color(125,125,Color.MAX_VALUE);
+     System.out.printf("--toHexString--\n");
+    System.out.printf("co1 -> r: %d g: %d b: %d %n", co1.getRed(), co1.getGreen(), co1.getBlue());
+    System.out.printf("co1 -> %s %n", co1.toHexString(false));
+    System.out.printf("co1 -> %s %n", co1.toHexString(true));
+}
+
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="AlphaColor">
+   
+    public static void funcAlpha(){
+        
+        AlphaColor ac1= new AlphaColor(0.0, 170, 212, 38);
+        
+        System.out.printf("%n");
+        System.out.printf("---AlphaColor--- %n");
+        System.out.printf("%s %n", ac1.toRGBString());
+        System.out.printf("%s %n", ac1.toString());
+        
+        
+        AlphaColor ac2 = new AlphaColor();
+        System.out.printf("---AlphaColor por defecto--- %n");
+        System.out.printf("%s %n", ac2.toRGBString());
+        
+        
+   
+        
+       
+        
+      
+       
+           
+    }
+
+
 //</editor-fold>
 
 //</editor-fold>

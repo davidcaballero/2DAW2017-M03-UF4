@@ -7,19 +7,18 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
-public class Rectangle {
+public class Rectangle extends Shape {
     
 //<editor-fold defaultstate="collapsed" desc="Atributos">
     
     private double  base;
     private double altura;
     
-//</editor-fold>
-    
+//</editor-fold>   
 //<editor-fold defaultstate="collapsed" desc="Metodos">
-//<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     
      /**
      * @return the base
@@ -59,22 +58,24 @@ public class Rectangle {
     }
     
 //</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="Constructores">
-    
-      public Rectangle(double base, double altura) {
-        this.setBase(base);
-        this.setAltura(altura);
-    }
+    //<editor-fold defaultstate="collapsed" desc="Constructores">
+          
+        public Rectangle(double base, double altura, Color backgroundColor, Color foregroundColor) {
+            super(backgroundColor,foregroundColor);
+            this.setBase(base);
+            this.setAltura(altura);
+        }
+        
+         
+        public Rectangle(double base, double altura) {
+            this(base,altura, new Color(Color.MAX_VALUE,Color.MAX_VALUE,Color.MAX_VALUE),
+        new Color(Color.MIN_VALUE,Color.MIN_VALUE,Color.MIN_VALUE));
+        }
 
-      
-        public Rectangle(double altura) {
-        this.setAltura(altura);
-        
-    }
-        
+   
         
 //</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="Metodos objeto">
+    //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
       
    public double getArea(){
         return (getBase()*getAltura())/2;
@@ -87,11 +88,16 @@ public class Rectangle {
       
       
 //</editor-fold>
-
+    //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+    
+    @Override
+    public String toString(){
+        return String.format("%n---Rectangulo ---%nBase: %.2f%n %nAltura: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
+        this.getBase(),this.getAltura(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
+    
+    }
     
 //</editor-fold>
-
+//</editor-fold>
   
-   
-    
 }

@@ -9,24 +9,25 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  *
  * @author David Caballero
  */
-public class Square {
+public class Square extends Shape {
     
-    //<editor-fold defaultstate="collapsed" desc="Atributos">
-    
+//<editor-fold defaultstate="collapsed" desc="Atributos">
     private double  side=1.0;
-    
+   
 //</editor-fold>
-    
-    //<editor-fold defaultstate="collapsed" desc="Metodos">
+//<editor-fold defaultstate="collapsed" desc="Metodos">
     //<editor-fold defaultstate="collapsed" desc="Constructores">
-     public Square() {
+         
+    public Square(double side,Color backgroundColor, Color foregroundColor) {
+        super(backgroundColor,foregroundColor);
+        this.setSide(side);
+    }
+    
+     public Square(double side){
+        this(side, new Color(Color.MAX_VALUE,Color.MAX_VALUE,Color.MAX_VALUE),
+        new Color(Color.MIN_VALUE,Color.MIN_VALUE,Color.MIN_VALUE));
     }
      
-     public Square(double side){
-     
-         this.setSide(side);
-     }
-    
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
      
@@ -49,7 +50,6 @@ public class Square {
         this.side = side;
     }
 
-     
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Operaciones objeto">
     
@@ -63,10 +63,17 @@ public class Square {
     
     
 //</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
+    
+    @Override
+    public String toString(){
+        return String.format("%n---Cuadrado ---%nLado: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
+        this.getSide(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
+    
+    }
+    
+//</editor-fold>
      
 //</editor-fold>
-
-    
-   
-    
+ 
 }

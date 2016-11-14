@@ -7,20 +7,19 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
-public class Cercle {
-    
-       
+public class Cercle extends Shape {
+           
 //<editor-fold defaultstate="collapsed" desc="Atributos">
     
     private double  radio;
     
     
-//</editor-fold>
-    
+//</editor-fold> 
 //<editor-fold defaultstate="collapsed" desc="Metodos">
-//<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+   
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     
      /**
      * @return the base
@@ -43,14 +42,21 @@ public class Cercle {
     
     
 //</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="Constructores">
+    //<editor-fold defaultstate="collapsed" desc="Constructores">
 
-    public Cercle(double radio) {
+    public Cercle(double radio,Color backgroundColor, Color foregroundColor) {
+        super(backgroundColor,foregroundColor);
         this.setRadio(radio);
     }
 
+    
+    public Cercle(double radio) {
+        this(radio,new Color(Color.MAX_VALUE,Color.MAX_VALUE,Color.MAX_VALUE),
+        new Color(Color.MIN_VALUE,Color.MIN_VALUE,Color.MIN_VALUE));
+    }
+
 //</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="Metodos objeto">
+    //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
       
    public double getArea(){
         return (getRadio()*getRadio())*Math.PI;
@@ -63,8 +69,17 @@ public class Cercle {
       
       
 //</editor-fold>
-
+    //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     
+    @Override
+    public String toString(){
+        return String.format("%n---Circulo ---%nRadio: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
+        this.getRadio(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
+    
+    }
+    
+//</editor-fold>
+   
 //</editor-fold>
     
 }

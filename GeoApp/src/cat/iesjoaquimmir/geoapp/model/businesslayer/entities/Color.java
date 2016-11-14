@@ -134,22 +134,33 @@ public class Color {
     
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
-      public String toRGBString(){
-          throw new UnsupportedOperationException("Not yet implemented!!");
-      }
       
-      public String toHexString(boolean upper){
-          
-          return String.format(upper ? "#%02X%02X%02X" : "#%02x%02x%02x", getRed(), getGreen(), getBlue());
-      }
+      public String toRGBString(boolean mayus){
+     throw new UnsupportedOperationException("Not yet implemented!!");
+    
+    }
+    
+    public String toRGBString(){
+        return toHexString(false);
+    }
       
-      public String toHexString(){
-          return toHexString(true);
-      }
-//</editor-fold>
     
     
+    public String toHexString(boolean upper){
+        return String.format(upper ? "#%02X%02X%02X": "#%02x%02x%02x", getRed(), getGreen(), getBlue());
+    
+    
+    }
+    
+     public String toHexString(){
+        
+         return toHexString(true);
+    
+    
+    }
+    
 //</editor-fold>
- 
+  
+//</editor-fold>
     
 }
