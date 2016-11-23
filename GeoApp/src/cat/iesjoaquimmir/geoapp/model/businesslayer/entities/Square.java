@@ -12,10 +12,12 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 public class Square extends Shape {
     
 //<editor-fold defaultstate="collapsed" desc="Atributos">
+    
     private double  side=1.0;
    
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
+  
     //<editor-fold defaultstate="collapsed" desc="Constructores">
          
     public Square(double side,AlphaColor backgroundColor, AlphaColor foregroundColor) {
@@ -66,14 +68,24 @@ public class Square extends Shape {
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     
     @Override
+    public String toString() {
+        return String.format("\n--- Cuadrado ---\nLado: %f\nÁrea: %s \nPerímetro: %s\n",
+                getSide(),getArea(),getPerimeter(), super.toString());
+    }
+    
+    
+    
+    /*@Override
     public String toString(){
         return String.format("%n---Cuadrado ---%nLado: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
         this.getSide(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
     
-    }
+    }*/
     
 //</editor-fold>
      
 //</editor-fold>
+
+    
  
 }

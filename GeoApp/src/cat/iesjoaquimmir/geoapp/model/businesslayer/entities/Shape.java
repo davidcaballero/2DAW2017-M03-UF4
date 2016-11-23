@@ -19,6 +19,7 @@ public abstract class Shape {
     
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
+    
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     
         /**
@@ -81,6 +82,7 @@ public abstract class Shape {
     //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
       public abstract double getArea();
 //</editor-fold>
+      
 //</editor-fold>
  
 }

@@ -51,7 +51,7 @@ public class AlphaColor extends Color {
     }
     
     public AlphaColor(int red, int green, int blue) {
-        this(MIN_VALUE,Color.MAX_VALUE, Color.MAX_VALUE, Color.MAX_VALUE);
+        this(MIN_VALUE,red,green,blue);
         
     }
     

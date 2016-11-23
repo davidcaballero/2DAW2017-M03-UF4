@@ -89,14 +89,13 @@ public class Rectangle extends Shape {
       
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
-    
+       
     @Override
-    public String toString(){
-        return String.format("%n---Rectangulo ---%nBase: %.2f%n %nAltura: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
-        this.getBase(),this.getAltura(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
-    
+    public String toString() {
+        return String.format("\n--- Rectangulo ---\nAltura: %f\nBase: %f\nÁrea: %s \nPerímetro: %s\n",
+                getAltura(),getBase(),getArea(),getPerimeter());
     }
-    
+   
 //</editor-fold>
 //</editor-fold>
   

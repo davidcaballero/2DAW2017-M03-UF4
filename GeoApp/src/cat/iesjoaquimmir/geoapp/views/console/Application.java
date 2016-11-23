@@ -20,6 +20,7 @@ import java.util.Scanner;
 public class Application {
     
     public static void main(String[] args) {
+        
         //<editor-fold defaultstate="collapsed" desc="menu">
      
        int  opc;
@@ -52,9 +53,11 @@ public class Application {
         }else if(opc==9){
             System.exit(0);
         }
+        
         }while(opc<=0 || opc>9);
 
-//</editor-fold>   
+//</editor-fold> 
+
     }
     
 //<editor-fold defaultstate="collapsed" desc="funciones">
@@ -73,10 +76,7 @@ public class Application {
       
           
         Square cuadrado= new Square(lado);
-        System.out.printf("\n---Cuadrado ---\n");
-        System.out.printf("\nÁrea: %s",cuadrado.getArea());         
-        System.out.printf("\nPerímetro: %s\n",cuadrado.getPerimeter());
-        System.out.printf("%s %n",cuadrado.toString());
+        System.out.printf("%s", cuadrado.toString());
     
     }
         
@@ -149,7 +149,7 @@ public class Application {
     //<editor-fold defaultstate="collapsed" desc="Color">
           public static void funcColor(){   
         
-        Color co1= new Color(125,125,Color.MAX_VALUE);
+        Color co1= new AlphaColor(125,125,Color.MAX_VALUE);
         
         System.out.printf("\n---Color---");             
         System.out.printf("\nco1-> r: %d g: %d b: %d %n", co1.getRed(), co1.getGreen(),
@@ -184,7 +184,7 @@ public static void funcColAlea() {
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="toHexString">
 public static void functoHexString(){
-    Color co1= new Color(125,125,Color.MAX_VALUE);
+    Color co1= new AlphaColor(125,125,Color.MAX_VALUE);
      System.out.printf("--toHexString--\n");
     System.out.printf("co1 -> r: %d g: %d b: %d %n", co1.getRed(), co1.getGreen(), co1.getBlue());
     System.out.printf("co1 -> %s %n", co1.toHexString(false));
@@ -196,25 +196,18 @@ public static void functoHexString(){
    
     public static void funcAlpha(){
         
-        AlphaColor ac1= new AlphaColor(0.0, 170, 212, 38);
+        AlphaColor ac1= new AlphaColor(0.5, 170, 212, 38);
         
         System.out.printf("%n");
         System.out.printf("---AlphaColor--- %n");
-        System.out.printf("%s %n", ac1.toRGBString());
         System.out.printf("%s %n", ac1.toString());
         
         
         AlphaColor ac2 = new AlphaColor();
         System.out.printf("---AlphaColor por defecto--- %n");
         System.out.printf("%s %n", ac2.toRGBString());
-        
-        
-        
-      
        
-           
     }
-
 
 //</editor-fold>
 

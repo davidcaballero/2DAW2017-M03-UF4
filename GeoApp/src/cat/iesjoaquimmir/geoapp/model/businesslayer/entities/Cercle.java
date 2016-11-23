@@ -15,7 +15,6 @@ public class Cercle extends Shape {
     
     private double  radio;
     
-    
 //</editor-fold> 
 //<editor-fold defaultstate="collapsed" desc="Metodos">
    
@@ -72,11 +71,11 @@ public class Cercle extends Shape {
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     
     @Override
-    public String toString(){
-        return String.format("%n---Circulo ---%nRadio: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
-        this.getRadio(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
-    
+    public String toString() {
+        return String.format("\n--- Circulo ---\nRadio: %f\nÁrea: %s \nPerímetro: %s\n",
+                getRadio(),getArea(),getPerimeter());
     }
+    
     
 //</editor-fold>
    

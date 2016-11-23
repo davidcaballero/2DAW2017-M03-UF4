@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author David Caballero
  */
-public class Color {
+public abstract class Color {
     
 //<editor-fold defaultstate="collapsed" desc="Atributos">
     
@@ -88,6 +88,7 @@ public class Color {
     
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Constructores">
+    
     public Color(int red, int green, int blue) {
         counter++;
         this.setRed(red);
@@ -99,15 +100,13 @@ public class Color {
         this(MIN_VALUE,MIN_VALUE,MIN_VALUE);
     }
     
-    
-    
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos estaticos">
     public static int getCounter(){
             return  counter;
     }
     
-    public static Color fromHexString(String color){
+    public static AlphaColor fromHexString(String color){
         
         if(color==null){
             throw new NullPointerException("Es obligatorio indicar una cadena de texto");
@@ -119,16 +118,16 @@ public class Color {
             
         }
         
-        return new Color(Integer.parseInt(color.substring(1,3),16),
+        return new AlphaColor(Integer.parseInt(color.substring(1,3),16),
                         Integer.parseInt(color.substring(3,5),16),
                         Integer.parseInt(color.substring(5,7),16));
     }
     
     
-      public static Color getRandow(){
+      public static AlphaColor getRandow(){
     
         Random rnd= new Random();
-        return new Color(rnd.nextInt(MAX_VALUE+1),rnd.nextInt(MAX_VALUE+1),rnd.nextInt(MAX_VALUE+1));
+        return new AlphaColor(rnd.nextInt(MAX_VALUE+1),rnd.nextInt(MAX_VALUE+1),rnd.nextInt(MAX_VALUE+1));
         
     }
     
@@ -158,8 +157,12 @@ public class Color {
     
     
     }
+     
+     
     
 //</editor-fold>
+
+     
   
 //</editor-fold>
     

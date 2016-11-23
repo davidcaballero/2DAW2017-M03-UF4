@@ -17,6 +17,7 @@ public class Sphere extends Shape {
       
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
+    
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     
      /**
@@ -68,14 +69,17 @@ public class Sphere extends Shape {
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     
+       
     @Override
-    public String toString(){
-        return String.format("%n---Esfera ---%nRadio: %.2f%nColor de fondo: %s%nColor de linia: %s%n ",
-        this.getRadio(),this.getBackgroundColor().toHexString(),this.getForegroundColor().toHexString());
-    
+    public String toString() {
+        return String.format("\n--- Esfera ---\nRadio: %f\nÁrea: %s \nPerímetro: %s\n",
+                getRadio(),getArea(),getPerimeter());
     }
     
+    
+    
 //</editor-fold>
+    
 //</editor-fold>
     
 }
