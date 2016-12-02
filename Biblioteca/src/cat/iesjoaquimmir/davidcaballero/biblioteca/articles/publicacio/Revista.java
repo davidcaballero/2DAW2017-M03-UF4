@@ -32,7 +32,11 @@ public class Revista extends Publicacio {
     /**
      * @param issn the issn to set
      */
-    public void setIssn(String issn) {
+    private void setIssn(String issn) {
+        
+         if (issn==null){
+            throw new IllegalArgumentException(String.format("El campo issn esta vacio.", issn));
+        }
         this.issn = issn;
     }
     

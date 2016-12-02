@@ -32,7 +32,10 @@ public class Llibre extends Publicacio{
     /**
      * @param isbn the isbn to set
      */
-    public void setIsbn(String isbn) {
+    private void setIsbn(String isbn) {
+         if (isbn==null){
+            throw new IllegalArgumentException(String.format("El campo isbn esta vacio.", isbn));
+        }
         this.isbn = isbn;
     }
     

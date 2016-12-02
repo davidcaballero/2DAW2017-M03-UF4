@@ -38,6 +38,9 @@ public class DiscCompacte extends Multimedia {
      * @param ismn the ismn to set
      */
     private void setIsmn(String ismn) {
+         if (ismn==null){
+            throw new IllegalArgumentException(String.format("El campo ismn esta vacio.", ismn));
+        }
         this.ismn = ismn;
     }
     

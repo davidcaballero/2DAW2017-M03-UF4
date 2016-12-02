@@ -16,6 +16,5 @@ public interface InArticle {
     Categoria getCategoria();
     @Override
     String toString();
-    
-    
+     
 }

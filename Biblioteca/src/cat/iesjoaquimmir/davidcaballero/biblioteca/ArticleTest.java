@@ -23,12 +23,12 @@ public ArrayList<Articles>articles;
  
       public static void main(String[] args){
     
-DiscCompacte a0 = new DiscCompacte("Mis grandes éxitos","Luis Miguel", Categoria.ADULT, 65,"04900009");
-DiscVersatilDigital a1 = new DiscVersatilDigital("Bamby", "Walt Disney", Categoria.INFANTIL, 89, "90843089");
-DiscVersatilDigital a2 = new DiscVersatilDigital("Crepusculo", "Warner", Categoria.JUVENIL, 129, "480980983");
-Llibre a3 = new Llibre("Ulises", "James Joyce", Categoria.ADULT, 456, "940943322");
-Llibre a4 = new Llibre("Tina Super Bruixa", "Enid Blyton", Categoria.JUVENIL, 456, "342090233");
-Revista a5 = new Revista("Patufet", "Ed. Infantil", Categoria.INFANTIL, 87, "80002122");
+DiscCompacte a0 = new DiscCompacte("Mis grandes éxitos","Luis Miguel", Categoria.C, 65,"04900009");
+DiscVersatilDigital a1 = new DiscVersatilDigital("Bamby", "Walt Disney", Categoria.A, 89, "90843089");
+DiscVersatilDigital a2 = new DiscVersatilDigital("Crepusculo", "Warner", Categoria.B, 129, "480980983");
+Llibre a3 = new Llibre("Ulises", "James Joyce", Categoria.C, 456, "940943322");
+Llibre a4 = new Llibre("Tina Super Bruixa", "Enid Blyton", Categoria.B, 456, "342090233");
+Revista a5 = new Revista("Patufet", "Ed. Infantil", Categoria.A, 87, "80002122");
         
      
     ArrayList<Articles> articles=new ArrayList<Articles>();

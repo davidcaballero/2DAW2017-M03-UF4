@@ -33,7 +33,12 @@ public abstract class Multimedia extends Articles {
     /**
      * @param minutos the minutos to set
      */
-    public void setMinutos(int minutos) {
+    private void setMinutos(int minutos) {
+        
+         if (minutos<=0){
+            throw new IllegalArgumentException(String.format("Los minutos son incorrectos."));
+        }
+        
         this.minutos = minutos;
     }
     

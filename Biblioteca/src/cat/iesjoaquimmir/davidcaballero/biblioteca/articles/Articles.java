@@ -33,6 +33,9 @@ public abstract class Articles implements InArticle {
      * @param titol the titol to set
      */
     private void setTitol(String titol) {
+         if (titol==null){
+            throw new IllegalArgumentException(String.format("El campo titulo esta vacio."));
+        }
         this.titol = titol;
     }
 
@@ -47,6 +50,9 @@ public abstract class Articles implements InArticle {
      * @param autor the autor to set
      */
     private void setAutor(String autor) {
+         if (autor==null){
+            throw new IllegalArgumentException(String.format("El campo autor esta vacio."));
+        }
         this.autor = autor;
     }
 
@@ -61,6 +67,9 @@ public abstract class Articles implements InArticle {
      * @param categoria the categoria to set
      */
     private void setCategoria(Categoria categoria) {
+         if (categoria==null){
+            throw new IllegalArgumentException(String.format("El campo categoria esta vacio."));
+        }
         this.categoria = categoria;
     }
     
@@ -80,7 +89,7 @@ public abstract class Articles implements InArticle {
     
      @Override
     public String toString() {
-        return String.format("%nTitol: %s %nAutor: %s %nCategoria: %s %n",getTitol(),getAutor(),getCategoria());
+        return String.format("%nTitol: %s %nAutor: %s %nCategoria: %s %n",getTitol(),getAutor(),categoria.getMssg());
     }
     
 //</editor-fold>

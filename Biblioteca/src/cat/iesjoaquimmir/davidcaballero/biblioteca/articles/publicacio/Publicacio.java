@@ -32,7 +32,10 @@ public abstract class Publicacio extends Articles {
     /**
      * @param numPagines the numPagines to set
      */
-    public void setNumPagines(int numPagines) {
+    private void setNumPagines(int numPagines) {
+         if (numPagines<=0){
+            throw new IllegalArgumentException(String.format("El numero de páginas és incorrecto."));
+        }
         this.numPagines = numPagines;
     }
 

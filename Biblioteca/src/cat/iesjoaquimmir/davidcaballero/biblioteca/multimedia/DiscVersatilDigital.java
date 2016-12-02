@@ -29,6 +29,9 @@ public class DiscVersatilDigital extends Multimedia {
 
 
     private void setIsan(String isan) {
+         if (isan==null){
+            throw new IllegalArgumentException(String.format("El campo isan esta vacio.", isan));
+        }
         this.isan = isan;
     }
     
