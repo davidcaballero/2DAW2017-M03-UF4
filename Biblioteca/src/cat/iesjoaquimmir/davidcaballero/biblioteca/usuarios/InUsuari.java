@@ -11,9 +11,9 @@ package cat.iesjoaquimmir.davidcaballero.biblioteca.usuarios;
  */
 public interface InUsuari {
     
-    String getNombre();
-    String getPrimerapellido();
-    String getSegundoapellido();
+    String getNom();
+    String getPri_cog();
+    String getSeg_cog();
    /* boolean potAgafarArticle();
     void agafaArticle();
     boolean teArticle();
