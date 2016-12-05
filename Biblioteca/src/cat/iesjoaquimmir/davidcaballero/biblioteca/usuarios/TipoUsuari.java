@@ -7,7 +7,7 @@ package cat.iesjoaquimmir.davidcaballero.biblioteca.usuarios;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
 public enum TipoUsuari {
     

@@ -7,18 +7,19 @@ package cat.iesjoaquimmir.davidcaballero.biblioteca.usuarios;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
 public interface InUsuari {
     
-   /* String getNombre();
+    String getNombre();
     String getPrimerapellido();
     String getSegundoapellido();
-    boolean potAgafarArticle();
+   /* boolean potAgafarArticle();
     void agafaArticle();
     boolean teArticle();
     void retornaArticle();
+    */
     @Override
     String toString();
-    */
+    
 }

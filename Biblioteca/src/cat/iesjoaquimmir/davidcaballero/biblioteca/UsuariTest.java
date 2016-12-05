@@ -20,7 +20,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
 public class UsuariTest {
     
@@ -38,10 +38,10 @@ UsuariAdult usuariNormal = new UsuariAdult("498878214M", TipoUsuari.Normal, "Pac
 UsuariMenorEdat usuariMenorPremium = new UsuariMenorEdat(usuariPremium, "Pedro", "Garcia", "Saez");
 UsuariMenorEdat usuariMenorNormal = new UsuariMenorEdat(usuariNormal, "Paulo", "Lopez", "Moliere");
 
-usuarios.add(usuariPremium);
-usuarios.add(usuariNormal);
-usuarios.add(usuariMenorPremium);
-usuarios.add(usuariMenorNormal);
+    usuarios.add(usuariPremium);
+    usuarios.add(usuariNormal);
+    usuarios.add(usuariMenorPremium);
+    usuarios.add(usuariMenorNormal);
 
 DiscCompacte a0 = new DiscCompacte("Mis grandes éxitos","Luis Miguel", Categoria.C, 65,"04900009");
 DiscVersatilDigital a1 = new DiscVersatilDigital("Bamby", "Walt Disney", Categoria.A, 89, "90843089");
@@ -50,12 +50,12 @@ Llibre a3 = new Llibre("Ulises", "James Joyce", Categoria.C, 456, "940943322");
 Llibre a4 = new Llibre("Tina Super Bruixa", "Enid Blyton", Categoria.B, 456, "342090233");
 Revista a5 = new Revista("Patufet", "Ed. Infantil", Categoria.A, 87, "80002122");
                            
-        articles.add(a0);
-        articles.add(a1);
-        articles.add(a2);
-        articles.add(a3);
-        articles.add(a4);
-        articles.add(a5);
+    articles.add(a0);
+    articles.add(a1);
+    articles.add(a2);
+    articles.add(a3);
+    articles.add(a4);
+    articles.add(a5);
         
         
         do{
@@ -63,15 +63,15 @@ Revista a5 = new Revista("Patufet", "Ed. Infantil", Categoria.A, 87, "80002122")
             System.out.println("1-Biblioteca \n2-Mostrar article\n3-Sortir");
             System.out.println("Elige una opcion: ");
             opc=input.nextInt();
-        if (opc==1){
-            funcAgafarUsuari(usuarios, articles);
-        }else if (opc==2){
-            funcMostrarArticle(articles);   
-        }else if (opc==3){
-            System.exit(0);
-        }
+            if (opc==1){
+                funcAgafarUsuari(usuarios, articles);
+            }else if(opc==2){
+                funcMostrarArticle(articles);   
+            }else if(opc==3){
+                System.exit(0);
+            }
         }while (opc<=0 || opc>3);
-    }
+}
     
 //<editor-fold defaultstate="collapsed" desc="funcAgafarUsuari">
      public static void funcAgafarUsuari(ArrayList<Usuari>usuarios, ArrayList<Articles>articles){
@@ -124,7 +124,6 @@ public static void funcAgafarArticle(Usuari usuario,ArrayList<Articles> articles
     
     }while(arts!=0);
    
-   
 }
         
 //</editor-fold>
@@ -154,25 +153,22 @@ public static void funcMostrarArticle(ArrayList<Articles> articles){
 
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="funcRetornaArticle">
+
 public static void funcRetornarArticle(Usuari usuario, ArrayList<Articles> articles){
         
     int art;
     Scanner input= new Scanner(System.in);
-
-   
+    
     System.out.printf("%n--Articulos para devolver--%n");
         
-            for  (int x=0;x<articles.size(); x++){
-                System.out.printf("%n---Articulo: %d---%n%s",x+1,articles.get(x));
-            }
+        for  (int x=0;x<articles.size(); x++){
+            System.out.printf("%n---Articulo: %d---%n%s",x+1,articles.get(x));
+        }
             
     System.out.printf("%nSelecciona un Articulo para devolver (0) para salir: ");
     art=input.nextInt();
-    
-     usuario.retornaArticle(articles.get(art-1));
-    
-              
-           
+    usuario.retornaArticle(articles.get(art-1));
+        
     }
 
 

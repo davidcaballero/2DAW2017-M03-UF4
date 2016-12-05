@@ -5,9 +5,11 @@
  */
 package cat.iesjoaquimmir.davidcaballero.biblioteca.usuarios;
 
+import java.util.Objects;
+
 /**
  *
- * @author alumne
+ * @author David Caballero
  */
 public class UsuariMenorEdat extends Usuari {
     
@@ -45,9 +47,15 @@ public class UsuariMenorEdat extends Usuari {
     
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
-     
-    public boolean esAdulto(){
-        return false;
+
+    /**
+     *
+     * @return
+     */
+    
+    @Override
+    public boolean getMenor() {
+        return true;
     }
     
 //</editor-fold>
@@ -58,13 +66,49 @@ public class UsuariMenorEdat extends Usuari {
         return String.format("%n---Usuario Menor de edad---%n%s%nTutor: %n%s",super.toString(),tutor.toString());
     }
     
-//</editor-fold>
+     @Override
+    public boolean equals(Object objec){
+        if (objec == null)
+            return false;
+        if (objec == this)
+            return true;
+        if (!(objec instanceof UsuariAdult))
+            return false;
+        UsuariMenorEdat usuarioMenorEdat = (UsuariMenorEdat) objec;
+        if (tutor == null || tutor != usuarioMenorEdat.tutor)
+            return false;
+      return true;
+    }
     
-//</editor-fold>
-
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 17 * hash + Objects.hashCode(this.tutor);
+        return hash;
+    }
+    
     @Override
     public TipoUsuari getTipoUsu() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   
+
+    @Override
+    public String getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getPrimerapellido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getSegundoapellido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+//</editor-fold>
+     
+//</editor-fold>
+
 }

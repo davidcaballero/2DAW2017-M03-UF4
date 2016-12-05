@@ -19,9 +19,8 @@ public abstract class Usuari implements InUsuari {
     private String nom;
     private String pri_cog;
     private String seg_cog;
-    private ArrayList<Articles> articulo;
-    int cont=0;
-    ArrayList<Articles> articulos=new ArrayList<>();
+    ArrayList<Articles> articulos;
+        
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
     
@@ -86,14 +85,14 @@ public abstract class Usuari implements InUsuari {
      * @return the articulo
      */
     public ArrayList<Articles> getArticulo() {
-        return articulo;
+        return articulos;
     }
 
     /**
      * @param articulo the articulo to set
      */
     public void setArticulo(ArrayList<Articles> articulo) {
-        this.articulo = articulo;
+        this.articulos = articulo;
     }
 
     
@@ -104,50 +103,48 @@ public abstract class Usuari implements InUsuari {
         this.nom = nom;
         this.pri_cog = pri_cog;
         this.seg_cog = seg_cog;
+        
     }
 
-    public Usuari() {
-    }
-    
+   
     
     
    
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
+    
     public abstract TipoUsuari getTipoUsu();
-     public boolean potAgafarArticle(Articles a){
+    public abstract boolean getMenor();
+    
+    public boolean potAgafarArticle(Articles a){
+        int cont=0;
         
-        if(this.getTipoUsu().tipoUsu()==true && cont<4 && teArticle(a)==false){
+        if(this.getTipoUsu().tipoUsu()==true && cont<this.getTipoUsu().cant() && teArticle(a)==false){
             cont++;
             return true;
-        }else if(this.getTipoUsu().tipoUsu()==false && cont<2 && teArticle(a)==false){
+        }else if(this.getTipoUsu().tipoUsu()==false && cont<this.getTipoUsu().cant() && teArticle(a)==false){
             cont++;
             return true;
         }else{
             return false;
         }
-        
     }
    
-    
-     public void agafaArticle(Articles a){
-   
-        if(potAgafarArticle(a)!=true){
-         System.out.println("No puedes cogerlo");
-            
-         }
-         articulos.add(a);
-     }
+    public void agafaArticle(Articles a){
+        if(potAgafarArticle(a)!=false){
+            articulos.add(a);
+        }
+            System.out.println("No puedes cogerlo");
+    }
      
     public boolean teArticle(Articles a){
-       
-        if(articulos.contains(a)){
+        if(articulos.contains(a)==true){
             return true;
+        }else{
+            return false;
         }
-        
-        return false;
     }
-     
+    
     public void retornaArticle(Articles a){
         articulos.remove(a);
     }
@@ -163,8 +160,5 @@ public abstract class Usuari implements InUsuari {
 //</editor-fold>
     
 //</editor-fold>
-
-
-   
    
 }

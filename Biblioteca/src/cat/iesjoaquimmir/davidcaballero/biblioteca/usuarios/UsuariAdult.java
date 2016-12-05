@@ -6,6 +6,7 @@
 package cat.iesjoaquimmir.davidcaballero.biblioteca.usuarios;
 
 import cat.iesjoaquimmir.davidcaballero.biblioteca.articles.Articles;
+import java.util.Objects;
 
 /**
  *
@@ -17,9 +18,8 @@ public class UsuariAdult extends Usuari {
     
     private String dni;
     private TipoUsuari tipoUsu;
-    private int cont=0;
-   
-    
+    int cont=0;
+       
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
 
@@ -71,24 +71,55 @@ public class UsuariAdult extends Usuari {
    
     
 //</editor-fold>
-    //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
-    
-      public boolean esAdulto(){
-        return true;
-    }
-   
-   
-      
-//</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     @Override
     public String toString(){
         return String.format("%n---Usuario Adulto---%nDNI: %s%nTipo de usuario: %s%n%s", getDni(), tipoUsu.getMsg(), super.toString());
     }
-     
-//</editor-fold>
+    
+     @Override
+    public boolean equals(Object o){
+        if (o == null)
+            return false;
+        if (o == this)
+            return true;
+        if (!(o instanceof UsuariAdult))
+            return false;
+        UsuariAdult useradulto = (UsuariAdult) o;
+        if (dni == null || dni != useradulto.dni)
+            return false;
+      return true;
+    }
+
+      @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.dni);
+        return hash;
+    }
+   
+      @Override
+    public String getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getPrimerapellido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getSegundoapellido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean getMenor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 //</editor-fold>
+        
+//</editor-fold>
 
-  
 }
