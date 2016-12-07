@@ -19,7 +19,7 @@ public abstract class Usuari implements InUsuari {
     private String nom;
     private String pri_cog;
     private String seg_cog;
-    ArrayList<Articles> articulos;
+    private ArrayList<Articles> articulos;
         
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
@@ -29,6 +29,7 @@ public abstract class Usuari implements InUsuari {
      /**
      * @return the nom
      */
+    @Override
     public String getNom() {
         return nom;
     }
@@ -47,6 +48,7 @@ public abstract class Usuari implements InUsuari {
     /**
      * @return the pri_cog
      */
+    @Override
     public String getPri_cog() {
         return pri_cog;
     }
@@ -65,6 +67,7 @@ public abstract class Usuari implements InUsuari {
     /**
      * @return the seg_cog
      */
+    @Override
     public String getSeg_cog() {
         return seg_cog;
     }
@@ -98,38 +101,43 @@ public abstract class Usuari implements InUsuari {
     
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Constructores">
-     
-    public Usuari(String nom, String pri_cog, String seg_cog) {
+
+    private Usuari(String nom, String pri_cog, String seg_cog, ArrayList<Articles> articulos) {
         this.nom = nom;
         this.pri_cog = pri_cog;
         this.seg_cog = seg_cog;
+        this.articulos = articulos;
+    }
+    
+    
+     
+    public Usuari(String nom, String pri_cog, String seg_cog) {
+        this(nom, pri_cog, seg_cog, new ArrayList<>());
         
     }
 
-   
-    
-    
-   
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos objeto">
     
     public abstract TipoUsuari getTipoUsu();
     public abstract boolean getMenor();
     
+    @Override
     public boolean potAgafarArticle(Articles a){
-        int cont=0;
         
-        if(this.getTipoUsu().tipoUsu()==true && cont<this.getTipoUsu().cant() && teArticle(a)==false){
-            cont++;
+        
+        if(this.getTipoUsu().tipoUsu()==true && this.getArticulo().size()<this.getTipoUsu().cant() && teArticle(a)==false){
+            
             return true;
-        }else if(this.getTipoUsu().tipoUsu()==false && cont<this.getTipoUsu().cant() && teArticle(a)==false){
-            cont++;
+        }else if(this.getTipoUsu().tipoUsu()==false && this.getArticulo().size()<this.getTipoUsu().cant() && teArticle(a)==false){
+            
             return true;
         }else{
             return false;
         }
     }
    
+    @Override
     public void agafaArticle(Articles a){
         if(potAgafarArticle(a)!=false){
             articulos.add(a);
@@ -137,6 +145,7 @@ public abstract class Usuari implements InUsuari {
             System.out.println("No puedes cogerlo");
     }
      
+    @Override
     public boolean teArticle(Articles a){
         if(articulos.contains(a)==true){
             return true;
@@ -145,6 +154,7 @@ public abstract class Usuari implements InUsuari {
         }
     }
     
+    @Override
     public void retornaArticle(Articles a){
         articulos.remove(a);
     }
