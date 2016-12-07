@@ -5,6 +5,8 @@
  */
 package cat.iesjoaquimmir.davidcaballero.biblioteca.usuarios;
 
+import cat.iesjoaquimmir.davidcaballero.biblioteca.articles.Articles;
+
 /**
  *
  * @author David Caballero
@@ -14,11 +16,11 @@ public interface InUsuari {
     String getNom();
     String getPri_cog();
     String getSeg_cog();
-   /* boolean potAgafarArticle();
-    void agafaArticle();
-    boolean teArticle();
-    void retornaArticle();
-    */
+    boolean potAgafarArticle(Articles a);
+    void agafaArticle(Articles a);
+    boolean teArticle(Articles a);
+    void retornaArticle(Articles a);
+    
     @Override
     String toString();
     
