@@ -16,6 +16,7 @@ public abstract class Articles implements InArticle {
     private String titol;
     private String autor;
     private Categoria categoria;
+    private int estadoArt;
     
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodos">
@@ -73,17 +74,37 @@ public abstract class Articles implements InArticle {
         this.categoria = categoria;
     }
     
+    /**
+     * @return the estadoArt
+     */
+    public int getEstadoArt() {
+        return estadoArt;
+    }
+
+    /**
+     * @param estadoArt the estadoArt to set
+     */
+    public void setEstadoArt(int estadoArt) {
+        this.estadoArt = estadoArt;
+    }
+    
     
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Constructores">
     
-    public Articles(String titol, String autor, Categoria categoria) {
+    public Articles(String titol, String autor, Categoria categoria, int estadoArt) {
         this.titol = titol;
         this.autor = autor;
         this.categoria = categoria;
+        this.estadoArt = estadoArt;
     }
     
     
+    public Articles(String titol, String autor, Categoria categoria) {
+        this(titol, autor, categoria,0);
+    }
+
+   
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Sobreescritura">
     

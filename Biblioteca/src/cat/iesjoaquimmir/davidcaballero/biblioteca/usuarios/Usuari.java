@@ -125,38 +125,45 @@ public abstract class Usuari implements InUsuari {
     @Override
     public boolean potAgafarArticle(Articles a){
         
-        
-        if(this.getTipoUsu().tipoUsu()==true && this.getArticulo().size()<this.getTipoUsu().cant() && teArticle(a)==false){
-            
+        if(this.getTipoUsu().tipoUsu()==true && this.getArticulo().size()<this.getTipoUsu().cant() && !teArticle(a) && a.getEstadoArt()==0){
             return true;
-        }else if(this.getTipoUsu().tipoUsu()==false && this.getArticulo().size()<this.getTipoUsu().cant() && teArticle(a)==false){
-            
+        }else if(this.getTipoUsu().tipoUsu()==false && this.getArticulo().size()<this.getTipoUsu().cant() && !teArticle(a) && a.getEstadoArt()==0){
             return true;
         }else{
             return false;
         }
+    
     }
    
     @Override
     public void agafaArticle(Articles a){
-        if(potAgafarArticle(a)!=false){
-            articulos.add(a);
-        }
+        
+        if(potAgafarArticle(a)){
+            /*
+            canvio el valor del estado del articulo y le pongo 1 para que no 
+            se pueda volver a coger.
+            */
+            a.setEstadoArt(1);
+            getArticulo().add(a);
+         
+       }else{
             System.out.println("No puedes cogerlo");
+        }    
     }
      
     @Override
     public boolean teArticle(Articles a){
-        if(articulos.contains(a)==true){
-            return true;
-        }else{
-            return false;
-        }
+        return getArticulo().contains(a);
     }
     
     @Override
     public void retornaArticle(Articles a){
-        articulos.remove(a);
+        /*
+        le vuelvo a poner 0 en el campo del estado del articulo para que se pueda
+         volver a coger.
+        */
+        a.setEstadoArt(0);
+        getArticulo().remove(a);
     }
     
 //</editor-fold>
